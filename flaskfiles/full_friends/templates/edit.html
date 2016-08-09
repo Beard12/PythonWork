@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Your Friends</title>
+	<style type="text/css">
+	.friends{
+		border:1px solid black;
+		display:inline-block;
+		width:15%;
+		margin:2%;
+		text-align: center;
+	}
+	#container{
+		width:90%;
+		margin-right:3%;
+		margin-left:3%;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+	{% for friend in friends: %}
+		<div class="friends">
+			<h3>Your friend's current information:</h3>
+				<p>First Name: {{ friend['first_name'] }}</p>
+				<p>Last Name: {{ friend['last_name'] }}</p>
+				<p>Email: {{ friend['email'] }}</p>
+	    </div>
+	    <hr>
+	    <h3>Update Here:<h3>
+	    <form action="/friends/{{friend['id']}}" method='POST'>
+	    	First Name:<input type="text" name="first_name" value="{{friend['first_name']}}">&nbsp;
+  			Last Name:<input type="text" name="last_name" value="{{friend['last_name']}}">&nbsp;
+  			Email:<input type="text" name="email" value="{{friend['email']}}">&nbsp;
+  			<input type="submit" value="Edit Friend">
+  		</form>
+	{% endfor %}
+
+	</div>
+
+</body>
+</html>

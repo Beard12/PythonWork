@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full_Friends</title>
+	<style type="text/css">
+	p{
+		font-size: 10px;
+	}
+	.friends{
+		border:1px solid black;
+		display:inline-block;
+		width:15%;
+		margin:2%;
+		text-align: center;
+		padding:5px;
+	}
+	.friends form{
+		display:inline;
+		margin-left:3px;
+		margin-bottom:5px;
+	}
+	#container{
+		width:90%;
+		margin-right:3%;
+		margin-left:3%;
+	}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+	{% for friend in friends: %}
+		<div class="friends">
+	     <p>First Name: {{ friend['first_name'] }}</p>
+	     <p>Last Name: {{ friend['last_name'] }}</p>
+	     <p>Email: {{ friend['email'] }}</p>
+	     <p>Time of Creation: {{friend['created_at']}}</p>
+	     <hr>
+	     <form action="/friends/{{friend['id']}}/edit">
+	     	<input type="submit" value="Edit">
+	     </form>
+	     <form action="/friends/{{friend['id']}}/delete" method='POST'>
+	     	<input type="submit" value="Delete" class="button">
+	     </form>
+
+	    </div>
+  	{% endfor %}
+  		<hr>
+  		<form action="/friends" method='POST'>
+  			First Name:<input type="text" name="first_name">&nbsp;
+  			Last Name:<input type="text" name="last_name">&nbsp;
+  			Email:<input type="text" name="email">&nbsp;
+  			<input type="submit" value="Add Friend">
+  		</form>
+  	</div>
+
+</body>
+</html>
