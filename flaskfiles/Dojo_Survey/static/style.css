@@ -1,0 +1,30 @@
+h4 {
+	text-decoration: underline;
+	margin-left:20px;
+}
+
+h3 {
+	margin-left:20px;
+}
+
+.buttons {
+	background-color: blue;
+	color: white;
+	border:0px;
+
+}
+p {
+	margin-left:20px;
+}
+
+form{
+	margin-left:20px;
+}
+
+div{
+	border: 1px solid black;
+	width:50%;
+	margin-left:30%;
+	margin-right:30%;
+
+}

@@ -1,0 +1,19 @@
+<html>
+    <head>
+       <title>Dojo Survey Index</title>
+       <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    </head>
+    <body>
+      <div>
+        <h4>Submitted Info</h4>
+        <p>Name: {{ name }}</p>
+        <p>Dojo Location: {{ dojo }}</p>
+        <p>Favorite Language: {{lang}}</p>
+        <p>Comment: {{comment}} </p>
+        <form action='/'>    
+          <input type="submit" name='button1' class="buttons" value='Go Back'>
+        </form>
+      </div>
+    
+    </body>
+</html>
