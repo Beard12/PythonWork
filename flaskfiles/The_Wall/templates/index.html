@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login/Registration</title>
+</head>
+<style type="text/css">
+.container{
+	width:90%;
+	margin:2% 4% 2% 4%;
+	text-align:center;
+}
+.boxes{
+	width:25%;
+	border: 1px solid black;
+	display: inline-block;
+	margin-left: 10px;
+	padding:10px;
+	vertical-align: top;
+
+}
+ul{
+	list-style-type: none;
+}
+	
+</style>
+<body>
+	<div class="container">
+		<h2>Welcome to Coding Dojo</h2>
+		<div class="boxes">
+			<h3>Please login below:</h3>
+			<form action="/login" method='post'>
+				Email:<input type="text" name="email"><br>
+				Password:<input type="password" name="password"><br>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+		<div class="boxes">
+			<h3>Please register below if you are not already a user:</h3>
+			<form action="/register" method='post'>
+				First Name:<input type="text" name="first_name"><br>
+				Last Name:<input type="text" name="last_name"><br>
+				Email:<input type="text" name="email"><br>
+				Password:<input type="password" name="password"><br>
+				Confirm Password:<input type="password" name="cf_password">
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</div>
+	<div class="container">
+		{% with loginmessages = get_flashed_messages(with_categories=true) %}
+	      {% if loginmessages %}
+	      	<div class="boxes">
+		        {% for category, message in loginmessages %}
+		          <p>{{ message }}</p>
+		        {% endfor %}
+		        </ul>
+		    </div>
+	      {% endif %}
+	    {% endwith %}
+	</div>
+</body>
+</html>
