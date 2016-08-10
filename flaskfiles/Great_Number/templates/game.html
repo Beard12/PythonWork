@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+  </head>
+  <body>
+    <div id = "container">
+      <h1>Welcome to the Great Number Game</h1>
+      <h3>I am thinking of a number between 1 and 100</h3>
+      <p>Take a guess</p>
+      <div id="guesswrong" {{hidden}}>
+        <p>{{message}}</p>
+      </div>
+    
+      <div id="guessright" {{hidden1}}>
+        <p>{{session['rannumber']}} was the number!<p>
+        <form action="/playagain" method="post" >
+          <input type="submit" value="Play Again!" class="button" id="playagain">
+        </form>
+      </div>
+      <form action="/guess" method="post">
+        <input type="text" name="guess" id="guess">
+      	<input type="submit" value="Submit" class="button" id="submit">
+      </form>
+    </div>
+
+  </body>
+</html>

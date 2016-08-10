@@ -1,0 +1,60 @@
+#container {
+	width:40%;
+	margin-right: 30%;
+	margin-left:30%;
+	margin-top:5%;
+	text-align: center;
+}
+
+#guessright{
+	width:60%;
+	margin-right: 15%;
+	margin-left: 20%;
+	height:350px;
+	text-align:center;
+	background-color: green;
+	color:white;
+	font-weight: bold;
+	
+
+}
+
+#guesswrong{
+	width:60%;
+	margin-right: 15%;
+	margin-left: 20%;
+	height:350px;
+	text-align:center;
+	background-color: red;
+	color:white;
+	font-weight: bold;
+	
+	
+}
+
+#guessright p{
+	line-height: 250px;
+	margin-bottom:0px;
+	font-size:35px;
+}
+
+#guesswrong p{
+	line-height: 350px;
+	margin-bottom: 0px;
+	font-size:30px;
+}
+
+
+.button{
+	background-color: white;
+	border:1px solid black;
+
+}
+
+#submit{
+	margin-top: 10px;
+}
+#playagain{
+	margin-top:0px;
+	padding:10px 10px;
+}
