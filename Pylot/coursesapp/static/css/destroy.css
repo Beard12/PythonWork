@@ -1,0 +1,21 @@
+#no{
+	border:1px solid black;
+	background-color: grey;
+	
+
+}
+
+#yes{
+	border:1px solid black;
+	background-color: red;
+	
+}
+#no a{
+	text-decoration: none;
+	color:black;
+}
+
+#yes a{
+	text-decoration: none;
+	color:white;
+}

@@ -1,0 +1,76 @@
+#container{
+	width:90%;
+	margin:2% 3%;
+}
+
+#addbutton{
+	background-color: green;
+	color:white;
+	border:1px solid black;
+	margin-left: 21%;
+}
+
+table{
+	width:50%;
+	margin:0% 0%;
+	border:1px solid black;
+	display:block;
+	height:400px;
+	overflow-y: scroll;
+}
+
+thead{
+	background-color: grey;
+}
+
+#top{
+	margin-bottom: 0px;
+}
+h2{
+	margin-bottom:5px;
+}
+
+#name{
+	margin-left: 35px;
+	margin-bottom:5px;
+	width:200px;
+}
+
+.course{
+	width:250px;
+	border-right:2 solid black;
+
+}
+.desc{
+	width:100px;
+	border-right:2 solid black;
+}
+.date{
+	width:150px;
+	border-right:2 solid black;
+}
+.actions{
+	width:100px;
+	border-right:2 solid black;
+}
+
+.rembutton{
+	background-color: transparent;
+	color:blue;
+	text-decoration: underline;
+	margin-top: 7px;
+	margin-left:15px;
+	border:0px;
+	font-size: 1em;
+
+}
+
+.oddrow{
+	background-color: lightgrey;
+	text-align: center;
+}
+.evenrow{
+	background-color: white;
+	text-align: center;
+}
+

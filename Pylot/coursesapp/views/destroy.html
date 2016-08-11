@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/destroy.css">
+	<title>Delete a course</title>
+</head>
+<body>
+	<h2>Are you sure you want to delete the following course?</h2>
+	<p>Name:{{course['course']}}</p>
+	<p>Description: {{course['description']}}</p>
+
+		<button id="no"><a href="/">No</a></button>
+		<button id="yes"><a href="/courses/dest/{{course['id']}}">Yes! I want to delete this</a></button>
+
+</body>
+</html>
