@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Signin Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/signin.css">
+  </head>
+  <body>
+        <div id="navbar">
+            <h3 id="testapp"><a href="/signin">Test App</a></h3>
+            <h4 id="home"><a href="/signin">Home</a></h4>
+            <h4 id="signin"><a href="/signin">Sign in</a></h4>
+        </div>
+
+        <div id="form">
+            <h3>Sign In</h3>
+            <form action="/signin/check" method='post'>
+                Email Address:<input type="email" name="email">
+                Password:<input type="password" name="password"><br>
+                <input type="submit" value="Sign In" id="signbutton">
+            </form>
+
+        {% with messages = get_flashed_messages(with_categories=True, category_filter=['login_errors']) %}
+          {% if messages %}
+                {% for category, message in messages %}
+                  <div class="error">{{ message }}</div>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+            <a href="/register">Don't have an account? Register.</a>
+        </div>
+
+        
+  </body>
+</html>

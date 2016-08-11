@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>User Information</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+  </head>
+  <body>
+    {% if admin == True %}
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{user_id}}">Test App</a></h3>
+            <h4 class="home"><a href="/dashboard/admin">Dashboard</a></h4>
+            <h4 class="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Log off</a></h4>
+        </div>
+    {% else %}
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{user_id}}">Test App</a></h3>
+            <h4 class="home"><a href="/dashboard">Dashboard</a></h4>
+            <h4 class="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Log off</a></h4>
+        </div>
+    {% endif %}
+        <div id="maincontent">
+            <h3>{{user['first_name']}} {{user['last_name']}}</h3>
+                <div>
+                    <div id="div1">
+                    <p>Registered at:</p>
+                    <p>User ID:</p>
+                    <p>Email address:</p>
+                    <p>Description:</p>    
+                    </div>
+                    <div id="div2">
+                    <p>{{user['created_at']}}</p>
+                    <p>#{{user['id']}}</p>
+                    <p>{{user['email']}}</p>
+                    <p>{{user['description']}}</p>
+                    </div>
+                </div>
+            <h3>Leave a message for {{user['first_name']}}</h3>
+            <form action="/messages/post/{{user['id']}}/{{user_id}}" method='POST'>
+                <textarea rows="5" cols="100" name="messagecontent"></textarea><br>
+                <input type="submit" value="Post" class="messagebutton">
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="message">
+                <h4><a href="/users/show/{{message['user_id']}}">{{message['first_name']}} {{message['last_name']}}</a> wrote <span class="messagetimestamp">{{message['created_at']}}</span></h4>
+                <textarea rows="5" cols="97">{{message['message']}}</textarea>
+                {% for comment in comments %} 
+                    {% if comment['message_id'] == message['id'] %}
+                    <div class="comment">
+                        <h4><a href="/users/show/{{comment['user_id']}}">{{comment['first_name']}} {{comment['last_name']}}</a> wrote {{comment['created_at']}}</h4>
+                        <textarea rows="3" cols="91">{{comment['comment']}}</textarea>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                    <div class="comment">
+                        <form action="/comments/post/{{message['id']}}/{{user_id}}/{{user['id']}}" method='POST'>
+                            <textarea rows="3" cols="91"  name="commentcontent" placeholder="write a message" id="commentarea"></textarea><br>
+                            <input type="submit" value="Post" class="commentbutton">
+                        </form>
+                    </div>
+            </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+  </body>
+</html>

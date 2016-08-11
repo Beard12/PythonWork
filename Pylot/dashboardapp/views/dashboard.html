@@ -1,0 +1,92 @@
+<html>
+  <head>
+    {% if session['admin']==True %}
+    <title>Admin Dashboard</title>
+    {% else %}
+    <title>User Dashboard</title>
+     {% endif %}
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/dashboard.js"></script>
+  </head>
+  <body>
+    {% if session['admin']==True %}
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{ user_id }}">Test App</a></h3>
+            <h4 id="dash"><a href="/dashboard/admin">Dashboard</a></h4>
+            <h4 id="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Logoff</a></h4>
+        </div>
+        <div id="maincontent">
+            <h3>Manage Users</h3>
+            <button><a href="/users/new">Add new</a></button>
+            <table>
+                <thead>
+                    <tr>
+                        <td class="column1">ID</td>
+                        <td class="column2">Name</td>
+                        <td class="column3">email</td>
+                        <td class="column4">created_at</td>
+                        <td id="column5a">user_level</td>
+                        <td class="column6">actions</td>        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if users%}
+                    {% for user in users %}
+                    <tr class = "{{loop.cycle('oddrow', 'evenrow')}}">
+                        <td>{{user['id']}}</td>
+                        <td><a href="/users/show/{{user['id']}}">{{user['first_name']}} {{user['last_name']}}</a></td>
+                        <td>{{user['email']}}</td>
+                        <td>{{user['created_at']}}</td>
+                        <td>{{user['user_level']}}</td>
+                        <td><a href="/users/edit/{{user['id']}}">edit</a>&nbsp;&nbsp;<a href="/users/remove/{{user['id']}}" onclick="return confirm('Are you sure you would like to delete this user?')">remove</a>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+
+            </table>
+
+        </div>
+      
+    {% else %}
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{ user_id }}">Test App</a></h3>
+            <h4 id="dash"><a href="/dashboard/user">Dashboard</a></h4>
+            <h4 id="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Logoff</a></h4>
+        </div>
+        <div id="maincontent">
+            <h3>All Users</h3>
+            <table>
+                <thead>
+                        <td class="column1">ID</td>
+                        <td class="column2">Name</td>
+                        <td class="column3">email</td>
+                        <td class="column4">created_at</td>
+                        <td class="column5">user_level</td>
+                </thead>
+                <tbody>
+                    {% if users%}
+                    {% for user in users %}
+                    <tr class = "{{loop.cycle('oddrow', 'evenrow')}}">
+                        <td>{{user['id']}}</td>
+                        <td><a href="/users/show/{{user['id']}}">{{user['first_name']}} {{user['last_name']}}</a></td>
+                        <td>{{user['email']}}</td>
+                        <td>{{user['created_at']}}</td>
+                        <td>{{user['user_level']}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+
+    {% endif %}
+
+        
+  </body>
+</html>

@@ -1,0 +1,149 @@
+#navbar{
+	height:50px;
+	border-bottom:1px solid black;
+	width:100%;
+}
+
+#testapp{
+	margin-left: 10%;
+	display:inline-block;
+	vertical-align: top;
+}
+
+
+.home{
+	margin-left:20px;
+	display:inline-block;
+	vertical-align: top;
+}
+
+#signin{
+	margin-left:50%;
+	display:inline-block;
+	vertical-align: top;
+
+}
+
+#navbar a{
+	text-decoration: none;
+	color:blue;
+}
+
+#maincontent{
+	margin-left:130px;
+}
+
+#maincontent h4{
+	margin-bottom:10px;
+	margin-top:10px;
+
+}
+#mainh3{
+	display:inline-block;
+}
+
+button{
+	background-color: blue;
+	border-radius:0px;
+	border:1px;
+	margin-left: 300px;
+}
+
+button a{
+	color:white;
+	text-decoration: none;
+
+}
+
+.signbutton{
+	margin-left: 90px;
+	background-color: green;
+	color:white;
+	border:1px solid black;
+
+}
+.savebutton{
+	margin-left: 90px;
+	margin-top: 10px;
+	background-color: green;
+	color:white;
+	border:1px solid black;
+
+}
+
+select{
+	width:131px;
+}
+
+.descbutton{
+	margin-left: 400px;
+	background-color: green;
+	color:white;
+	border:1px solid black;
+	margin-top: 10px;
+
+}
+
+.passbutton{
+	margin-left: 30px;
+	background-color: green;
+	color:white;
+	border:1px solid black;
+
+}
+
+.form1{
+	display:inline-block;
+	vertical-align: top;
+	width:180px;
+	padding-right:10px;
+	padding-left:10px;
+	border:1px solid black;
+}
+.form1 input{
+	margin-bottom: 10px;
+}
+
+.form2{
+	display:inline-block;
+	vertical-align: top;
+	margin-left: 20px;
+	width:180px;
+	padding-right:10px;
+	padding-left: 10px;
+	border:1px solid black;
+}
+
+.form2 input{
+	margin-bottom: 10px;
+}
+
+#form3{
+	margin-top:20px;
+	width:441px;
+	padding-right:10px;
+	padding-left: 10px;
+	padding-bottom:10px; 
+	border:1px solid black;
+}
+
+
+.error {
+	padding:10px 20px;
+	color:white;
+	background-color: red;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+
+}
+
+.success{
+	padding:10px 20px;
+	color:white;
+	background-color: green;
+	font-weight: bold;
+	margin-bottom: 10px;
+
+}
+

@@ -1,0 +1,167 @@
+<html>
+  <head>
+    {% if session['admin']==True %}
+    <title>Edit User </title>
+    {% else %}
+    <title>Edit Profile</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="/static/css/edit.css">
+  </head>
+  <body>
+    {% if session['admin'] == True %}
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{user_id}}">Test App</a></h3>
+            <h4 class="home"><a href="/dashboard/admin">Dashboard</a></h4>
+            <h4 class="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Log off</a></h4>
+        </div>
+        <div id="maincontent">
+            {% if user['id'] == user_id %}
+            <h3 id="mainh3">Edit Profile</h3>
+            {% else %}
+            <h3 id="mainh3">Edit user {{user['id']}}</h3>
+            {% endif %}
+            <button><a href="/dashboard/admin">Return to Dashboard</a></button>
+            <div>
+                <div class="form1">
+                    <h4>Edit Information</h4>
+                    <form action="/users/editname/{{user['id']}}" method='post'>
+                        Email Address:<input type="email" name="email" value="{{user['email']}}"><br>
+                        First Name: <input type="text" name="first_name" value="{{user['first_name']}}"><br>
+                        Last Name:<input type="text" name="last_name" value="{{user['last_name']}}"><br>
+                        User Level:<br><select name="user_level">
+                                        {% if user['user_level'] == 'admin' %}
+                                        <option value="admin">Admin</option>
+                                        <option value="normal">Normal</option>
+                                        {% else %}
+                                        <option value="normal">Normal</option>
+                                        <option value="admin">Admin</option>
+                                        {% endif %}
+                                   </select>
+                        <input type="submit" value="Save" class="savebutton">
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=True, category_filter=['change_errorsname']) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="error">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    {% with messages = get_flashed_messages(with_categories=True, category_filter=['successname']) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="success">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="form2">
+                    <h4>Change Password</h4>
+                    <form action="/users/editpassword/{{user['id']}}" method='post'>
+                    Password:<input type="password" name="password"><br>
+                    Password Confirm:<input type="password" name="cf_password"><br>
+                    <input type="submit" value="Update Password" class="passbutton">
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=True, category_filter=['change_errorspass']) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="error">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    {% with messages = get_flashed_messages(with_categories=True, category_filter=['successpass']) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="success">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div id="form3">
+                    <h4>Edit Description</h4>
+                    <form action="/users/editdesc/{{user['id']}}" method='post'>
+                        <textarea rows=5 cols=70 name="description">{{user['description']}}</textarea><br>
+                        <input type="submit" value="Save" class="descbutton">
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=True, category_filter=['successdesc']) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="success">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{user_id}}">Test App</a></h3>
+            <h4 class="home"><a href="/dashboard">Dashboard</a></h4>
+            <h4 class="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Log off</a></h4>
+        </div>
+        <div id="maincontent">
+            <h3>Edit profile</h3>
+            <div class="form1">
+                <h4>Edit Information</h4>
+                <form action="/users/editname/{{user['id']}}" method='post'>
+                    Email Address:<input type="email" name="email" value="{{user['email']}}"><br>
+                    First Name: <input type="text" name="first_name" value="{{user['first_name']}}"><br>
+                    Last Name:<input type="text" name="last_name" value="{{user['last_name']}}"><br>
+                    <input type="submit" value="Save" class="signbutton">
+                </form>
+                {% with messages = get_flashed_messages(with_categories=True, category_filter=['change_errorsname']) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="error">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {% with messages = get_flashed_messages(with_categories=True, category_filter=['successname']) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="success">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="form2">
+                <h4>Change Password</h4>
+                <form action="/users/editpassword/{{user['id']}}" method='post'>
+                    Password:<input type="password" name="password"><br>
+                    Password Confirm:<input type="password" name="cf_password"><br>
+                    <input type="submit" value="Update Password" class="passbutton">
+                </form>
+                {% with messages = get_flashed_messages(with_categories=True, category_filter=['change_errorspass']) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="error">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {% with messages = get_flashed_messages(with_categories=True, category_filter=['successpass']) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="success">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div id="form3">
+                <h4>Edit Description</h4>
+                <form action="/users/editdesc/{{user['id']}}" method='post'>
+                    <textarea rows=5 cols=70 name="description">{{user['description']}}</textarea><br>
+                    <input type="submit" value="Save" class="descbutton">
+                </form>
+                {% with messages = get_flashed_messages(with_categories=True, category_filter=['successdesc']) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="success">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    {% endif %}
+  </body>
+</html>

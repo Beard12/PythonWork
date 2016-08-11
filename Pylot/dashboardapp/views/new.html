@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>New User</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/new.css">
+  </head>
+  <body>
+        <div id="navbar">
+            <h3 id="testapp"><a href="/users/show/{{ user_id }}">Test App</a></h3>
+            <h4 class="home"><a href="/dashboard/admin">Dashboard</a></h4>
+            <h4 class="home"><a href="/users/edit">Profile</a></h4>
+            <h4 id="signin"><a href="/logoff">Logoff</a></h4>
+        </div>
+
+        <div id="form">
+            <h3>Add a new user</h3>
+            <form action="/register/admin/check" method='post'>
+                Email Address:<input type="email" name="email"><br>
+                First Name: <input type="text" name="first_name"><br>
+                Last Name:<input type="text" name="last_name"><br>
+                Password:<input type="password" name="password"><br>
+                Password Confirm:<input type="password" name="cf_password"><br>
+                <input type="submit" value="Create" id="signbutton">
+            </form>
+        </div>
+        <button><a href="/dashboard/admin">Return to Dashboard</a></button>
+        {% with messages = get_flashed_messages(with_categories=True, category_filter=['register_errors']) %}
+          {% if messages %}
+                {% for category, message in messages %}
+                  <div class="error">{{ message }}</div>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% with messages = get_flashed_messages(with_categories=True, category_filter=['success']) %}
+          {% if messages %}
+                {% for category, message in messages %}
+                  <div class="success">{{ message }}</div>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        
+  </body>
+</html>
