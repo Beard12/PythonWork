@@ -1,0 +1,28 @@
+.form{
+
+	width:150px;
+	padding-right:0px;
+	margin-left:10px;
+}
+
+.form input{
+	margin-bottom:10px;
+
+}
+
+h3{
+	margin-left: 10px
+}
+
+#button{
+	border-radius:0px;
+	border:1px solid black;
+	background-color:white;
+	margin-bottom:15px;
+	margin-right:110px;
+}
+
+.edit{
+	color:blue;
+	margin-left:10px;
+}

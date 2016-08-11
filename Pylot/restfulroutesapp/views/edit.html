@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/edit.css">
+	<title>Edit Product {{product['id']}} | Semi Restful Route Demo</title>
+</head>
+<body>
+	<h3>Edit Product</h3>
+	<div class="form">
+		<form action="/products/update/{{product['id']}}" method="POST">
+			Name <input type="text" name="productname" value="{{product['name']}}"><br>
+			Description <input type="text" name="productdesc" value="{{product['description']}}"><br>
+			Price <input type="text" name="productprice" value="{{product['price']}}"><br>
+
+			<input type="submit" value="Update" id="button">
+		</form>
+	</div>
+	<p id="links"><a href="/products/show/{{product['id']}}">Show</a>&nbsp;|&nbsp;<a href="/" class="edit">Back</a></p>
+
+
+</body>
+</html>

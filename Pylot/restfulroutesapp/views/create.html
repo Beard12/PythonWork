@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/create.css">
+	<title>Create a new product | Semi Restful Route Demo</title>
+</head>
+<body>
+	<h3>Add a new product</h3>
+	<div class="form">
+		<form action="/products/create" method="POST">
+			Name <input type="text" name="productname"><br>
+			Description <input type="text" name="productdesc"><br>
+			Price <input type="text" name="productprice"><br>
+
+			<input type="submit" value="Create" id="button">
+		</form>
+	</div>
+	<a href="/" class="edit">Go back</a>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.text{
+	display:inline-block;
+	width:100px;
+	margin-left:10px;
+}
+h3{
+	margin-left: 10px;
+}
+
+#links{
+	margin-top:10px;
+	margin-left:10px;
+}
+.edit{
+	color:blue;
+}

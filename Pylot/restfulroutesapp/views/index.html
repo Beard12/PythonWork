@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>All Products | Semi Restful Route Demo</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div id="container">
+        <h3>Products</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th class="product">Name</th><th class="desc">Description</th><th class="price">Price</th><th class="actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%if products %}
+                {% for product in products %}
+                <tr class="{{loop.cycle('oddrow', 'evenrow')}}">
+                    <td>{{product['name']}}</td><td>{{product['description']}}</td><td>{{product['price']}}</td><td><a href="/products/show/{{product['id']}}" class="show">Show</a> &nbsp;| &nbsp;<a href="/products/edit/{{product['id']}}" class="edit">Edit</a><a href="/products/destroy/{{product['id']}}" class="rembutton">remove</a>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        <h4><a href="/products/new" class="edit">Add a new product</a></h4>
+    </div>
+
+
+  </body>
+</html>

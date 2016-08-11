@@ -1,0 +1,69 @@
+#container{
+	width:90%;
+	margin:2% 3%;
+}
+
+table{
+	width:50%;
+	margin:0% 0%;
+	border:1px solid black;
+	display:block;
+	height:300px;
+	overflow-y: scroll;
+}
+
+thead{
+	background-color: grey;
+}
+.product{
+	width:120px;
+}
+.desc{
+	width:175px;
+}
+.price{
+	width:90px;
+}
+.actions{
+	width:200px;
+}
+
+.show{
+	margin-left:10px;
+	color:blue;
+}
+
+.edit{
+	color:blue;
+}
+
+.rembutton{
+	background-color:white;
+	text-decoration: none;
+	padding:1px 2px;
+	border:1px solid black;
+	font-size: 1em;
+	margin-left: 10px;
+
+}
+
+.oddrow{
+	background-color: lightgrey;
+	text-align: center;
+	height:26px;
+}
+.evenrow{
+	background-color: white;
+	text-align: center;
+	height:26px;
+}
+
+
+
+
+
+
+
+
+
+
