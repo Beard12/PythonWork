@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Add Book and Review</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bookpage.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="/books" id="add">Home</a>
+      <a href="/logoff" id="logout">Logout</a>
+    </div>
+    <h3>{{bookinfo['title']}}</h3>
+    <p>Author: {{bookinfo['author']}}</p>
+    <div id="reviews">
+      <h3>Reviews:</h3>
+      {% for bookreview in bookreviews:%}
+        {%if bookreview['active'] %}
+        <hr>
+        <p>Rating {{bookreview['rating']}}</p>
+        <p><a href="/users/{{bookreview['user_id']}}">{{bookreview['name']}}</a> says {{bookreview['review']}}</p>
+        <p>Posted on {{bookreview['created_at']}} {%if bookreview['user_id'] == user %}<a class="delete" href="/delete/{{bookreview['review_id']}}/{{bookinfo['id']}}">Delete this Review</a>{% endif %}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div id="addreview">
+      <h3>Add a Review</h3>
+        <form action="/addreview/{{bookinfo['id']}}/{{user}}" method="POST">
+          <textarea rows="3" cols="30" name="reviewcontent"></textarea>
+          Rating:<select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <input type="submit" value="Submit Review">
+        </form>
+
+    </div>
+        
+  </body>
+</html>

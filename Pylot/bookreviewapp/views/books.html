@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Books Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <h2>Welcome, {{user}}!</h2>
+      <a href="/books/add" id="add">Add Book and Review</a>
+      <a href="/logoff" id="logout">Logout</a>
+    </div>
+    <div id="recent">
+      <h3>Recent Book Reviews:</h3>
+      {% for bookreview in bookreviews:%}
+        {%if bookreview['active'] %}
+        <a href="/books/{{bookreview['book_id']}}" class ="titles">{{bookreview['title']}}</a>
+        <p>Rating {{bookreview['rating']}}</p>
+        <p><a href="/users/{{bookreview['user_id']}}">{{bookreview['name']}}</a> says {{bookreview['review']}}</p>
+        <p>Posted on {{bookreview['created_at']}}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div id="booklist">
+      <h3>Other Books with Reviews:</h3>
+        <div><!-- style so it can do overflow-->
+            {% for booklisting in booklist%}
+              <a href="/books/{{booklisting['id']}}">{{booklisting['title']}}</a><br>
+            {% endfor %}
+        </div>
+
+    
+    </div>
+        
+  </body>
+</html>

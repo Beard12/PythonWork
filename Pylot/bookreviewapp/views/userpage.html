@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>User Reviews</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/userpage.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="/books" id="add">Home</a>
+      <a href="/books/add">Add Book and Review</a>
+      <a href="/logoff" id="logout">Logout</a>
+    </div>
+    <p>User Alias: {{user['alias']}}</p>
+    <p>Name: {{user['name']}}</p>
+    <p>Email: {{user['email']}}</p>
+    <p>Total Reviews: {{count['count']}}</p>
+    <br>
+    <br>
+
+    <p>Posted Reviews on the following books:</p>
+    {%for book in booklist:%}
+      {% if book['active'] == True %}
+      <a href="/books/{{book['book_id']}}">{{book['title']}}</a><br>
+      {% endif %}
+    {% endfor %}
+        
+  </body>
+</html>

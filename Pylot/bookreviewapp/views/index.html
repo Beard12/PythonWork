@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/signin.css">
+  </head>
+  <body>
+        <h1>Welcome</h1>
+        <div id="regisform">
+          <h3>Register</h3>
+            <form action="/register/check" method='post'>
+                Email Address:<input type="email" name="email"><br>
+                Name: <input type="text" name="name"><br>
+                Alias:<input type="text" name="alias"><br>
+                Password:<input type="password" name="password"><br>
+                *Password should be at least 8 characters<br>
+                Confirm PW:<input type="password" name="cf_password"><br>
+                <input type="submit" value="Register" id="signbutton">
+            </form>
+        {% with messages = get_flashed_messages(with_categories=True, category_filter=['register_errors']) %}
+          {% if messages %}
+                {% for category, message in messages %}
+                  <div class="error">{{ message }}</div>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+        </div>
+        <div id="loginform">
+            <h3>Login</h3>
+            <form action="/signin/check" method='post'>
+                Email Address:<input type="email" name="email">
+                Password:<input type="password" name="password"><br>
+                <input type="submit" value="Sign In" id="signbutton">
+            </form>
+        {% with messages = get_flashed_messages(with_categories=True, category_filter=['login_errors']) %}
+          {% if messages %}
+                {% for category, message in messages %}
+                  <div class="error">{{ message }}</div>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+        </div>
+
+        
+  </body>
+</html>

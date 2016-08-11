@@ -1,0 +1,86 @@
+#navbar{
+	height:50px;
+	border-bottom:1px solid black;
+	width:100%;
+}
+
+#testapp{
+	margin-left: 10%;
+	display:inline-block;
+	vertical-align: top;
+}
+
+
+.home{
+	margin-left:20px;
+	display:inline-block;
+	vertical-align: top;
+}
+
+#signin{
+	margin-left:50%;
+	display:inline-block;
+	vertical-align: top;
+
+}
+
+#navbar a{
+	text-decoration: none;
+	color:blue;
+}
+
+#maincontent{
+	margin-left: 130px;
+}
+
+#maincontent a{
+	text-decoration:none;
+	color:blue;
+}
+#div1{
+	display:inline-block;
+	width:100px;
+}
+
+#div2{
+	display:inline-block;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.message{
+	margin-left: 20px;
+	overflow:hidden;
+}
+.message textarea{
+	margin-bottom: 20px;
+}
+
+.comment{
+	margin-left: 37px;
+	margin-bottom:10px;
+}
+
+#commentarea{
+	margin-bottom: 10px;
+}
+
+.messagetimestamp{
+  	margin-left:350px;
+}
+
+.commentbutton{
+	margin-left: 530px;
+	background-color: green;
+	color: white;
+	border:1px solid black;
+}
+
+.messagebutton{
+	margin-left: 585px;
+	margin-top:10px;
+	background-color: green;
+	color: white;
+	border:1px solid black;
+}
+

@@ -1,0 +1,120 @@
+#navbar{
+	height:50px;
+	border-bottom:1px solid black;
+	width:100%;
+}
+
+#testapp{
+	margin-left: 10%;
+	display:inline-block;
+	vertical-align: top;
+}
+
+#home{
+	margin-left:20px;
+	display:inline-block;
+	vertical-align: top;
+}
+
+#dash{
+	margin-left:20px;
+	display:inline-block;
+	vertical-align: top;
+	font-weight: bold;
+
+}
+
+#signin{
+	margin-left:50%;
+	display:inline-block;
+	vertical-align: top;
+
+}
+
+a{
+	text-decoration: none;
+	color:blue;
+}
+
+#maincontent{
+	margin-left:130px;
+}
+
+table{
+	width:650px;
+	margin:0% 0%;
+	border:1px solid black;
+	display:block;
+	height:300px;
+	overflow-y: scroll;
+
+}
+
+thead{
+	background-color: grey;
+	text-align:center;
+}
+
+#maincontent h3{
+	display:inline-block;
+}
+
+button{
+	margin-left: 475px;
+	border-radius:0px;
+	border:1px solid black;
+	background-color:blue;
+}
+
+button a{
+	color:white;
+	text-decoration: none;
+}
+
+.column1{
+	width:40px;
+}
+.column2{
+	width:170px;
+}
+.column3{
+	width:170px;
+}
+.column4{
+	width:100px;
+}
+.column5{
+	width:160px;
+}
+
+#column5e{
+	width:100px;
+}
+
+.column6{
+	width:120px;
+}
+
+.oddrow{
+	background-color: lightgrey;
+	text-align: center;
+}
+.evenrow{
+	background-color: white;
+	text-align: center;
+
+}
+
+.remove{
+	display:inline-block;
+	margin:auto;
+}
+
+.remove input{
+	border:0px;
+	font-size:16px;
+	background-color: transparent;
+	color:blue;
+	padding:0px;
+	font-family: "Times"
+}
