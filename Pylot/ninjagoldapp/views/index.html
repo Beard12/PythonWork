@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div id = "container">
+      Your Gold:<input type="text" value="{{usergold}}" id="gold">
+      <div id = "input_field">
+        <div class = "building">
+          <form action="/process_money/farm" method="post">
+            <p class="boxname">Farm</p>
+            <p class="money">(earns 10-20 golds)</p>
+            <input type ="hidden" name="building" value="farm"/>
+            <input type ="submit" value="Find Gold!" class="button"/>
+          </form>
+        </div>
+        <div class ="building">
+          <form action="/process_money/cave" method="post">
+            <p class ="boxname">Cave</p>
+            <p class="money">(earns 5-10 golds)</p>
+            <input type ="hidden" name="building" value="cave"/>
+            <input type ="submit" value="Find Gold!" class="button"/>
+          </form>
+        </div>
+        <div class ="building">
+          <form action="/process_money/house" method="post">
+            <p class="boxname">House</p>
+            <p class="money">(earns 2-5 golds)</p>
+            <input type ="hidden" name="building" value="house"/>
+            <input type ="submit" value="Find Gold!" class="button"/>
+          </form>
+        </div>
+        <div class = "building">
+          <form action="/process_money/casino" method="post">
+            <p class="boxname">Casino</p>
+            <p class="money">(earns/takes 0-50 golds)</p>
+            <input type ="hidden" name="building" value="casino"/>
+            <input type ="submit" value="Find Gold!" class="button"/>
+          </form>
+        </div>
+      </div>
+      <p id="active">Activities:</p>
+      <div id="activities">
+      {% if session['check']==True  %}
+      {% for x in range(0,session['dictionlen'])%}
+        <p class="{{session['classname'][x]}}">{{session['activities'][x]}}</p>
+      {% endfor%}
+      {%endif%}
+      </div>
+    </div>
+
+  </body>
+</html>
