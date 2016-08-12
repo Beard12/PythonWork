@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Random Word Generator</title>
+    <style type="text/css">
+        #container{
+            text-align: center;
+            margin:2% 3% 0% 3%;
+            width:90%;
+        }
+        #box{
+            font-size:2em;
+            border:1px solid black;
+            padding:20px 30px;
+            width:30%;
+            margin:1% 32%;
+            text-align: center
+        }
+        input{
+            background-color: white;
+            border:1px solid black;
+            padding:15px;
+            font-size: 1.25em
+
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+        <p>Random Word (attempt#{{number}})</p>
+        <div id="box">
+            {{ranstring}}
+        </div>
+        <form action='/generate' method='POST'>
+          <input type="submit" value="Generate" id="name">
+        </form>
+    </div>
+  </body>
+</html>
