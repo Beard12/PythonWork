@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Survey</title>
+    <style type="text/css">
+        #container{
+            margin:2% 3% 0% 3%;
+            width:90%;
+        }
+        #box{
+            border:1px solid black;
+            padding:20px 30px;
+            width:40%;
+            margin:1% 22%;
+            text-align: center
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+        <div id="box">
+           
+            <form action='/process' method='POST'>
+            Your Name: <input type="text" name="name"><br>
+            Dojo Location: <select name='dojlocation'>
+                              <option value="Los Angeles">Los Angeles</option>
+                              <option value="Washington DC">Washington DC</option>
+                              <option value="Seattle">Seattle</option>
+                              <option value="Silicon Valley">Silicon Valley</option>
+                           </select><br>
+            Favorite Language: <select name='favlang'>
+                              <option value="python">Python</option>
+                              <option value="C++">C++</option>
+                              <option value="javascript">Javascript</option>
+                              <option value="java">Java</option>
+                           </select><br>
+            Comment:<textarea rows="4" cols="50" name="comment" placeholder="Enter text here.."></textarea>
+              <input type="submit" value="Submit" id="submitbutton">
+            </form>
+        </div>
+    </div>
+  </body>
+</html>
