@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Login & Reg | Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div id="container">
+        <h2>Registration</h2>
+        <div class="form">
+            <form action="/welcome/register" method="post">
+                First Name: <input type="text" name="first_name"><br>
+                Last Name: <input type="text" name="last_name"><br>
+                Email: <input type="email" name="email"><br>
+                Password: <input type="password" name="password"><br>
+                Confirm PW: <input type="password" name="cf_password"><br>
+                <input type="submit" value="Register" class="button">
+            </form>
+        </div>
+        {% with regismessages = get_flashed_messages(with_categories=True, category_filter=['register_errors']) %}
+          {% if regismessages %}
+                {% for category, message in regismessages %}
+                  <p>{{ message }}</p>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <h2>Login</h2>
+        <div class="form">
+            <form action="/welcome/login" method="post">
+                Email: <input type="email" name="email"><br>
+                Password: <input type="password" name="password"><br>
+                <input type="submit" value="Login" class="button">
+            </form>
+        </div>
+        {% with loginmessages = get_flashed_messages(with_categories=True, category_filter=['login_errors']) %}
+          {% if loginmessages %}
+                {% for category, message in loginmessages %}
+                  <p>{{ message }}</p>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+
+
+  </body>
+</html>

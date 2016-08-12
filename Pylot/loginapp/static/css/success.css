@@ -1,0 +1,9 @@
+#text{
+	color:green;
+}
+a{
+	text-decoration: none;
+	border:solid 1px black;
+	color: black;
+	border-radius:5px;
+}

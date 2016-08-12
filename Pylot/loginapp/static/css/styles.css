@@ -1,0 +1,25 @@
+#container{
+	width:90%;
+	margin:2% 3%;
+}
+
+.form{
+
+	width:245px;
+	text-align: right;
+}
+.form input{
+	margin-left:20px;
+	margin-bottom:5px;
+}
+
+.button{
+	background-color: blue;
+	color:white;
+	font-weight: bold;
+	border:1px solid black;
+}
+
+h2{
+	margin-top:0px;
+}
